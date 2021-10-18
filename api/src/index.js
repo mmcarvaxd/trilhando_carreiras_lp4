@@ -2,6 +2,8 @@ const config = require('./config/environment.config')
 const express = require('express')
 const companyRouter = require('./routes/company.router')
 const jobRouter = require('./routes/job.router')
+const cors = require('cors')
+const morgan = require('morgan')
 
 const app = express()
 const port = config.PORT || 3000
@@ -9,6 +11,8 @@ const port = config.PORT || 3000
 const CompanyRouter = companyRouter
 const JobRouter = jobRouter
 
+app.use(cors())
+app.use(morgan('tiny'))
 app.use(express.json())
 
 app.get('/', (_, res)=> res.send("Trilhando Carreiras v1.0"))
