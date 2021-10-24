@@ -9,6 +9,7 @@ export class InputComponent implements OnInit {
   @Input() title = ''
   @Input() fieldType = ''
   @Input() fieldValue: any
+  @Input() isValid: boolean = true
   @Output() fieldValueChange: EventEmitter<any> = new EventEmitter<any>()
 
   constructor() { }
