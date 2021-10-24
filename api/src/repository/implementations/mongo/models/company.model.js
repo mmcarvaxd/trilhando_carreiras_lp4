@@ -27,6 +27,15 @@ const schema = new mongoose.Schema({
     },
     logo: {
         type: Schema.Types.Buffer
+    },
+    email: {
+        type: String,
+        required: true,
+        unique : true
+    },
+    password: {
+        type: String,
+        required: true
     }
 })
 

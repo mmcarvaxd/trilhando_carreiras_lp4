@@ -7,12 +7,16 @@ import { ArchwizardModule } from 'angular-archwizard';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ListComponent } from './pages/list/list.component';
+import { CardComponent } from './pages/list/components/card/card.component';
+import { SearchComponent } from './pages/list/components/search/search.component';
 
 
 @NgModule({
   declarations: [
     RegisterComponent,
-    ListComponent
+    ListComponent,
+    CardComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,
