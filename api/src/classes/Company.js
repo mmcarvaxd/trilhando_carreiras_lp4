@@ -4,7 +4,7 @@ const emailUtil = require("../Util/email.util")
 const tokenUtil = require("../Util/token.util")
 
 class Company {
-    constructor({ _id, name, description, companyRegister, headquarter, businessField, logo, email, password, token }) {
+    constructor({ _id, name, description, companyRegister, headquarter, businessField, logo, email, password, token, passwordHash }) {
         this._id = _id
         this.name = name
         this.description = description
@@ -14,6 +14,7 @@ class Company {
         this.businessField = businessField
         this.email = email
         this.password = password
+        this.passwordHash = passwordHash
         this.logo = logo
     }
 
@@ -78,7 +79,7 @@ class Company {
     }
 
     login(password) {
-        return passwordUtil.validate(password, this.hashPassword)
+        return passwordUtil.validate(password, this.passwordHash)
     }
 }
 

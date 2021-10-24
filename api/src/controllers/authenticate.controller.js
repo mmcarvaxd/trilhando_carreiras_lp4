@@ -2,13 +2,14 @@ const { Request, Response } = require('express')
 const Auth = require('../classes/Auth')
 const authService = require('../service/authenticate.service')
 
-class CompanyController {
+class AuthenticateController {
     /**
      * @param {Request} req Express Request
      * @param {Response} res Express Response
      */
      async authCompany(req, res, next) {
         try {
+            console.log("aqui")
             const auth = new Auth(req.body)
             let resp = await authService.authCompany(auth)
     
@@ -36,4 +37,4 @@ class CompanyController {
 
 }
 
-module.exports = new CompanyController()
+module.exports = new AuthenticateController()
