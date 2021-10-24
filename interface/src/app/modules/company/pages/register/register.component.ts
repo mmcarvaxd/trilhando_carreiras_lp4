@@ -3,7 +3,7 @@ import { Company } from 'src/app/shared/Classes/Company';
 import { CompanyService } from 'src/app/shared/services/company.service';
 
 @Component({
-  selector: 'app-register',
+  selector: 'tc-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
