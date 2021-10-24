@@ -9,6 +9,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ListComponent } from './pages/list/list.component';
 import { CardComponent } from './pages/list/components/card/card.component';
 import { SearchComponent } from './pages/list/components/search/search.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SearchComponent } from './pages/list/components/search/search.component
     RegisterComponent,
     ListComponent,
     CardComponent,
-    SearchComponent
+    SearchComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,

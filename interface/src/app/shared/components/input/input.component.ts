@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class InputComponent implements OnInit {
   @Input() title = ''
-  @Input() fieldType = ''
+  @Input() fieldType = 'text'
   @Input() fieldValue: any
   @Input() isValid: boolean = true
   @Output() fieldValueChange: EventEmitter<any> = new EventEmitter<any>()
