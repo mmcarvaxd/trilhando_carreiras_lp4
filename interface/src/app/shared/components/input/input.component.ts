@@ -17,6 +17,6 @@ export class InputComponent implements OnInit {
   }
 
   valueChanged() {
-    this.fieldValueChange.emit()
+    this.fieldValueChange.emit(this.fieldValue)
   }
 }
