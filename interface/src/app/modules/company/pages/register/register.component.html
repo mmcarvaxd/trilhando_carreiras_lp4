@@ -1,0 +1,85 @@
+<main>
+  <div class="px-4 py-16 mx-auto max-w-screen-xl sm:px-6 lg:px-8">
+    <aw-wizard [navBarLayout]="'small'">
+      <aw-wizard-step stepTitle="Sobre a empresa">
+        <div class="max-w-lg mx-auto text-center mt-4">
+          <tc-title>
+            Ache funcionários de outro nível 🚀
+          </tc-title>
+
+          <tc-sub-title>
+            Para começar digite o nome e uma breve descrição da sua empresa 😉
+          </tc-sub-title>
+        </div>
+        <div class="max-w-xl mx-auto mt-8 mb-0 space-y-4">
+          <div>
+            <tc-input [(fieldValue)]="company.name" title="Nome da empresa" fieldType="text"></tc-input>
+          </div>
+          <div>
+            <tc-input [(fieldValue)]="company.description" title="Descrição" fieldType="text"></tc-input>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <p class="text-sm text-gray-500">
+              Já Cadastrado?
+              <a class="underline" [routerLink]="['/login']">Faça login</a>
+            </p>
+
+            <tc-button awNextStep>
+              Próximo passo
+            </tc-button>
+          </div>
+        </div>
+      </aw-wizard-step>
+      <aw-wizard-step stepTitle="Dados Importantes">
+        <div class="max-w-lg mx-auto text-center mt-4">
+          <tc-title>
+            Mais algumas informações
+          </tc-title>
+
+          <tc-sub-title>
+            Precisamos identificar sua empresa 💳
+          </tc-sub-title>
+
+        </div>
+        <div class="max-w-xl mx-auto mt-8 mb-0 space-y-4">
+          <div>
+            <tc-input [(fieldValue)]="company.companyRegister" title="CNPJ" fieldType="text"></tc-input>
+          </div>
+          <div>
+            <tc-input [(fieldValue)]="company.headquarter" title="Endereço" fieldType="text"></tc-input>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <tc-button buttonClass="text-gray-500" awPreviousStep>Voltar</tc-button>
+            <tc-button awNextStep>Próximo passo</tc-button>
+          </div>
+        </div>
+      </aw-wizard-step>
+      <aw-wizard-step stepTitle="Útimos passos">
+        <div class="max-w-lg mx-auto text-center mt-4">
+          <tc-title>
+            E pra finalizar...
+          </tc-title>
+
+          <tc-sub-title>
+            Conte-nos mais sobre o seu ramo 🧳
+          </tc-sub-title>
+        </div>
+        <div class="max-w-xl mx-auto mt-8 mb-0 space-y-4">
+          <div>
+            <tc-input [(fieldValue)]="company.businessField" title="Área de atuação" fieldType="text"></tc-input>
+          </div>
+          <div>
+            <tc-input [(fieldValue)]="company.headquarter" title="Logo" fieldType="text"></tc-input>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <tc-button buttonClass="text-gray-500" awPreviousStep>Voltar</tc-button>
+            <tc-button (click)="saveCompany()">Finalizar</tc-button>
+          </div>
+        </div>
+      </aw-wizard-step>
+    </aw-wizard>
+  </div>
+</main>

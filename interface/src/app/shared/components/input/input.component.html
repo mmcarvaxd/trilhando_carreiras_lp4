@@ -1,0 +1,8 @@
+<div>
+    <label [for]="title" class="sr-only">{{title}}</label>
+
+    <div class="relative">
+        <input type="text" [name]="title" [id]="title" class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
+            [(ngModel)]="fieldValue" (ngModelChange)="valueChanged()" [placeholder]="title" />
+    </div>
+</div>
