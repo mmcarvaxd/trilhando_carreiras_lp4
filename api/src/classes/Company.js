@@ -1,13 +1,17 @@
 const InvalidField = require("../Errors/invalidField.error")
+const passwordUtil = require("../Util/password.util")
+const emailUtil = require("../Util/email.util")
 
 class Company {
-    constructor({ _id, name, description, companyRegister, headquarter, businessField, logo }) {
+    constructor({ _id, name, description, companyRegister, headquarter, businessField, logo, email, password }) {
         this._id = _id
         this.name = name
         this.description = description
         this.companyRegister = companyRegister
         this.headquarter = headquarter //TODO - Validate headquarter
         this.businessField = businessField
+        this.email = email
+        this.password = password
         this.logo = logo
     }
 
@@ -45,8 +49,34 @@ class Company {
         }
     }
 
-    static teste () {
+    validatePassword() {
+        if (!this.password) {
+            throw new InvalidField({ message: "Password not sent", field: "password", object: "Company" })
+        }
+
+        if(this.password.length < 6) {
+            throw new InvalidField({ message: "Password too short", field: "password", object: "Company" })
+        }
+    }
+
+    validateEmail() {
+        if (!this.email) {
+            throw new InvalidField({ message: "Email not sent", field: "email", object: "Company" })
+        }
+
+        const isValid = emailUtil.validate(this.email)
         
+        if(!isValid) {
+            throw new InvalidField({ message: "Invalid email", field: "email", object: "Company" })
+        }
+    }
+
+    hashPassword() {
+        this.passwordHash = passwordUtil.hash(this.password)
+    }
+
+    login(password) {
+        return passwordUtil.validate(password, this.hashPassword)
     }
 }
 

@@ -25,7 +25,10 @@ class CompanyService {
         company.validateDescription()
         company.validateBusinessField()
         company.validateCompanyRegister()
-
+        company.validateEmail()
+        company.validatePassword()
+        company.hashPassword()
+        
         delete company._id 
 
         const companyResponse = await companyRepository.createCompany(company)
