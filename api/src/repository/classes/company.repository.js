@@ -11,6 +11,16 @@ class CompanyRepository {
         return companies
     }
 
+    async getCompanyByEmail(email) {
+        let filter = {
+            email
+        }
+
+        const company = await companyRepository.findOne(filter)
+
+        return company
+    }
+
     async getCompany(id) {
         const company = await companyRepository.findOne({
             _id: id
@@ -21,6 +31,12 @@ class CompanyRepository {
 
     async createCompany(company) {
         const companyResp = await companyRepository.create(company)
+
+        return companyResp
+    }
+
+    async updateToken(_id, token) {
+        const companyResp = await companyRepository.updateOne({_id}, {token})
 
         return companyResp
     }

@@ -1,12 +1,14 @@
 const InvalidField = require("../Errors/invalidField.error")
 const passwordUtil = require("../Util/password.util")
 const emailUtil = require("../Util/email.util")
+const tokenUtil = require("../Util/token.util")
 
 class Company {
-    constructor({ _id, name, description, companyRegister, headquarter, businessField, logo, email, password }) {
+    constructor({ _id, name, description, companyRegister, headquarter, businessField, logo, email, password, token }) {
         this._id = _id
         this.name = name
         this.description = description
+        this.token = token
         this.companyRegister = companyRegister
         this.headquarter = headquarter //TODO - Validate headquarter
         this.businessField = businessField
