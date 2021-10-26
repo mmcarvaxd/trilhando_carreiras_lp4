@@ -9,7 +9,6 @@ class AuthenticateController {
      */
      async authCompany(req, res, next) {
         try {
-            console.log("aqui")
             const auth = new Auth(req.body)
             let resp = await authService.authCompany(auth)
     
