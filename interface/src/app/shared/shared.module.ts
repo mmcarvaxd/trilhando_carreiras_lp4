@@ -7,6 +7,7 @@ import { SubTitleComponent } from './components/sub-title/sub-title.component';
 import { ButtonComponent } from './components/button/button.component';
 import { CompanyService } from './services/company.service';
 import { HttpClientModule } from "@angular/common/http";
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { HttpClientModule } from "@angular/common/http";
     TitleComponent,
     SubTitleComponent,
     ButtonComponent,
+    FooterComponent
   ],
   providers: [
     CompanyService
@@ -27,7 +29,8 @@ import { HttpClientModule } from "@angular/common/http";
     InputComponent,
     TitleComponent,
     SubTitleComponent,
-    ButtonComponent
+    ButtonComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }

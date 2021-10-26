@@ -10,6 +10,10 @@ import { ListComponent } from './pages/list/list.component';
 import { CardComponent } from './pages/list/components/card/card.component';
 import { SearchComponent } from './pages/list/components/search/search.component';
 import { LoginComponent } from './pages/login/login.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ActionCardComponent } from './pages/home/components/action-card/action-card.component';
+import { LogoComponent } from './components/logo/logo.component';
 
 
 @NgModule({
@@ -18,7 +22,11 @@ import { LoginComponent } from './pages/login/login.component';
     ListComponent,
     CardComponent,
     SearchComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderComponent,
+    HomeComponent,
+    ActionCardComponent,
+    LogoComponent
   ],
   imports: [
     CommonModule,
