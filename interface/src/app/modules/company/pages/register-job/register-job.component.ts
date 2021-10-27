@@ -1,3 +1,4 @@
+import { JobService } from './../../../../shared/services/job.service';
 import { Job } from './../../../../shared/Classes/Job';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,12 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterJobComponent implements OnInit {
   job: Job = new Job()
-  constructor() { }
+  requirements: string = ""
+  constructor(private jobService: JobService) { }
 
   ngOnInit(): void {
   }
 
-  saveJob() {
-    console.log(this.job)
+  async saveJob() {
+    this.job.requirements = this.requirements.split(",")
+    await this.jobService.saveJob(this.job)
   }
 }

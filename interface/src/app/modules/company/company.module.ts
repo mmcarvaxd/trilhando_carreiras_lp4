@@ -15,6 +15,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ActionCardComponent } from './pages/home/components/action-card/action-card.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { RegisterJobComponent } from './pages/register-job/register-job.component';
+import { ListJobComponent } from './pages/list-job/list-job.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { RegisterJobComponent } from './pages/register-job/register-job.componen
     HomeComponent,
     ActionCardComponent,
     LogoComponent,
-    RegisterJobComponent
+    RegisterJobComponent,
+    ListJobComponent
   ],
   imports: [
     CommonModule,

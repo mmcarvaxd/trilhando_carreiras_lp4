@@ -1,3 +1,4 @@
+import { ListJobComponent } from './pages/list-job/list-job.component';
 import { RegisterJobComponent } from './pages/register-job/register-job.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
@@ -22,6 +23,9 @@ const routes: Routes = [
   }, {
     path: 'job',
     component: RegisterJobComponent
+  }, {
+    path: 'job/list',
+    component: ListJobComponent
   }
 ];
 
