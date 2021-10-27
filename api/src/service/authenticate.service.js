@@ -26,7 +26,7 @@ class CompanyService {
         await companyRepository.updateToken(company._id, token)
 
         let jwt = tokenUtil.generateCompanyJWT(company, token)
-
+        company.token = jwt
         return {
             company,
             jwt

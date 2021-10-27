@@ -1,4 +1,5 @@
 const JobLevelEnum = require("../enums/jobLevel.enum")
+const jobWorkingTimeEnum = require("../enums/jobWorkingTime.enum")
 const InvalidField = require("../Errors/invalidField.error")
 
 class Job {
@@ -57,7 +58,7 @@ class Job {
     }
 
     validateWorkingTime() {
-        let values = JobLevelEnum.getEnumArray()
+        let values = jobWorkingTimeEnum.getEnumArray()
 
         if(!values.includes(this.workingTime)) {
             throw new InvalidField({ message: "Job Working Time Field was not sent", field: "workingTime", object: "Job" })

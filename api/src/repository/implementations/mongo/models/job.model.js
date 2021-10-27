@@ -36,7 +36,8 @@ const schema = new mongoose.Schema({
         default: 0
     },
     companyId: { 
-        type: Schema.Types.ObjectId
+        type: Schema.Types.ObjectId,
+        ref: 'companies'
     },
     status: {
         type: String,

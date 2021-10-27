@@ -6,7 +6,9 @@ class JobRepository {
             filter = {}
         }
 
-        const jobs = await jobRepository.find(filter)
+        const jobs = await jobRepository.find(filter).populate({
+            path: 'companyId'
+          })
 
         return jobs
     }

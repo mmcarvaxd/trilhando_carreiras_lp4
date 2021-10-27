@@ -1,4 +1,4 @@
-class JobLevelEnum {
+class JobWorkingTime {
     jobEnum = Object.freeze({
         part: 'part',
         full: 'full', 
@@ -22,4 +22,4 @@ class JobLevelEnum {
     }
 }
 
-module.exports = new JobLevelEnum()
+module.exports = new JobWorkingTime()
