@@ -8,4 +8,5 @@ export class Company {
   email: string = ''
   password: string = ''
   logo: string = ''
+  token?: string
 }

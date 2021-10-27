@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngxs/store';
 import { Auth } from 'src/app/shared/Classes/Auth';
 import { AuthenticateService } from 'src/app/shared/services/authenticate.service';
+import { CompanyLogin } from '../../store/actions/company.actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'tc-login',
@@ -9,13 +12,13 @@ import { AuthenticateService } from 'src/app/shared/services/authenticate.servic
 })
 export class LoginComponent implements OnInit {
   auth: Auth = new Auth()
-  constructor(private authService: AuthenticateService) { }
+  constructor(private store: Store, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   async doLogin() {
-    let resp = await this.authService.authCompany(this.auth)
-    console.log(resp)
+    await this.store.dispatch(new CompanyLogin(this.auth)).toPromise()
+    this.router.navigate(['company', 'home'])
   }
 }

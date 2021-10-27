@@ -1,31 +1,37 @@
+import { NotAuthGuard } from './guards/notauth.guard';
+import { AuthGuard } from './guards/auth.guard';
 import { ListJobComponent } from './pages/list-job/list-job.component';
 import { RegisterJobComponent } from './pages/register-job/register-job.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListComponent } from './pages/list/list.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ListComponent
+    redirectTo: 'signin'
   }, {
     path: 'signup',
-    component: RegisterComponent
+    component: RegisterComponent,
+    canActivate: [NotAuthGuard]
   },  {
     path: 'signin',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [NotAuthGuard]
   },  {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   }, {
     path: 'job',
-    component: RegisterJobComponent
+    component: RegisterJobComponent,
+    canActivate: [AuthGuard]
   }, {
     path: 'job/list',
-    component: ListJobComponent
+    component: ListJobComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

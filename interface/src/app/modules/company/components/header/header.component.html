@@ -22,8 +22,8 @@
           <span class="block mt-1 text-xs font-medium">Notificações</span>
         </a>
       </div>
-      <div class="items-center hidden divide-x divide-black lg:flex">
-        <a href="" class="block px-6 text-center text-gray-100">
+      <button class="items-center hidden divide-x divide-black lg:flex" (click)="testNotification()">
+        <a class="block px-6 text-center text-gray-100">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mx-auto" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -31,17 +31,17 @@
           </svg>
           <span class="block mt-1 text-xs font-medium">Perfil</span>
         </a>
-      </div>
-      <div class="items-center hidden divide-x divide-black lg:flex">
-        <a href="" class="block px-6 text-center text-gray-100">
+      </button>
+      <button (click)="logout()" class="items-center hidden divide-x divide-black lg:flex">
+        <div class="block px-6 text-center text-gray-100">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mx-auto" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
           </svg>
           <span class="block mt-1 text-xs font-medium">Sair</span>
-        </a>
-      </div>
+        </div>
+      </button>
 
       <button type="button"
         class="inline-flex flex-col items-center border-0 justify-center w-16 h-16 bg-blue-500 lg:hidden text-gray-100">

@@ -1,18 +1,21 @@
-<header>
-  <tc-header></tc-header>
-</header>
+<tc-header></tc-header>
 <main>
   <div class="w-full mt-10">
-    <img src="https://i.pinimg.com/736x/6c/fa/46/6cfa460bcdde4b714761e534fe45f01a.jpg" class="rounded-full w-52 h-52 m-auto">
+    <img src="https://i.pinimg.com/736x/6c/fa/46/6cfa460bcdde4b714761e534fe45f01a.jpg"
+      class="rounded-full w-52 h-52 m-auto">
   </div>
   <div class="text-center mt-10">
-    <tc-title>Seja bem vindo, o Brabo</tc-title>
+    <tc-title>Seja bem vindo, {{companyName}}</tc-title>
   </div>
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 px-10 mt-20 mb-10">
-    <tc-action-card link="/company/job" [action]="1" title="Cadastrar Vagas" description="Ache novos canditados para sua empresa!"></tc-action-card>
-    <tc-action-card link="/company/job/list" [action]="2" title="Listar Vagas" description="Acompanhe os processos já cadastrados!"></tc-action-card>
-    <tc-action-card link="/company/job/charts" [action]="3" title="Estatísticas" description="Veja como os seus processos estão indo!"></tc-action-card>
-    <tc-action-card link="/company/profile" [action]="4" title="Perfil" description="Revise seu cadastro!"></tc-action-card>
+    <tc-action-card link="/company/job" [action]="1" title="Cadastrar Vagas"
+      description="Ache novos canditados para sua empresa!"></tc-action-card>
+    <tc-action-card link="/company/job/list" [action]="2" title="Listar Vagas"
+      description="Acompanhe os processos já cadastrados!"></tc-action-card>
+    <tc-action-card link="/company/job/charts" [action]="3" title="Estatísticas"
+      description="Veja como os seus processos estão indo!"></tc-action-card>
+    <tc-action-card link="/company/profile" [action]="4" title="Perfil" description="Revise seu cadastro!">
+    </tc-action-card>
   </div>
 </main>
 <tc-footer></tc-footer>

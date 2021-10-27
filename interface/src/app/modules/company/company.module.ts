@@ -16,6 +16,9 @@ import { ActionCardComponent } from './pages/home/components/action-card/action-
 import { LogoComponent } from './components/logo/logo.component';
 import { RegisterJobComponent } from './pages/register-job/register-job.component';
 import { ListJobComponent } from './pages/list-job/list-job.component';
+import { NgxsModule } from '@ngxs/store';
+import { CompanyState } from './store/states/company.state';
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 
 
 @NgModule({
