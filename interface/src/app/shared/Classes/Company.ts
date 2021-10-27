@@ -1,5 +1,5 @@
 export class Company {
-  _id?: number
+  _id?: string
   name: string = ''
   description: string = ''
   companyRegister: string = ''

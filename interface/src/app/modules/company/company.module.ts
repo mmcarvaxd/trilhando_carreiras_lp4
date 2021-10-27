@@ -14,6 +14,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ActionCardComponent } from './pages/home/components/action-card/action-card.component';
 import { LogoComponent } from './components/logo/logo.component';
+import { RegisterJobComponent } from './pages/register-job/register-job.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { LogoComponent } from './components/logo/logo.component';
     HeaderComponent,
     HomeComponent,
     ActionCardComponent,
-    LogoComponent
+    LogoComponent,
+    RegisterJobComponent
   ],
   imports: [
     CommonModule,

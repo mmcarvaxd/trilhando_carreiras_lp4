@@ -37,6 +37,18 @@ const schema = new mongoose.Schema({
     },
     companyId: { 
         type: Schema.Types.ObjectId
+    },
+    status: {
+        type: String,
+        enum : ['openned','closed', 'finished'],
+        default: 'openned',
+        required: true
+    },
+    location: {
+        type: String,
+        enum : ['office','remote', 'hybrid'],
+        default: 'office',
+        required: true
     }
 })
 

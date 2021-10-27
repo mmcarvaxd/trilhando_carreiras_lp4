@@ -1,0 +1,191 @@
+<tc-header></tc-header>
+<main>
+  <div class="px-4 py-16 mx-auto max-w-screen-xl sm:px-6 lg:px-8">
+    <aw-wizard [navBarLayout]="'small'">
+      <aw-wizard-step stepTitle="a vaga">
+        <div class="max-w-lg mx-auto text-center mt-4">
+          <tc-title>
+            Faça sua empresa decolar 🚀
+          </tc-title>
+
+          <tc-sub-title>
+            Para começar digite o nome e uma breve descrição da sua vaga 😉
+          </tc-sub-title>
+        </div>
+        <div class="max-w-xl mx-auto mt-8 mb-0 space-y-4">
+          <div>
+            <tc-input [(fieldValue)]="job.name" title="Nome da vaga" fieldType="text"></tc-input>
+          </div>
+          <div>
+            <div>
+              <label class="sr-only" for="message">Descrição</label>
+              <textarea
+                [(ngModel)]="job.description"
+                class="w-full p-3 text-sm border-gray-200 rounded-lg"
+                placeholder="Message"
+                rows="8"
+                draggable="false"
+                style="resize: none;"
+                id="message"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <tc-button buttonClass="text-gray-100 bg-red-500" awPreviousStep>Cancelar</tc-button>
+            <tc-button awNextStep>
+              Próximo passo
+            </tc-button>
+          </div>
+        </div>
+      </aw-wizard-step>
+      <aw-wizard-step stepTitle="Dados da Vaga">
+        <div class="max-w-lg mx-auto text-center mt-4">
+          <tc-title>
+            Mais algumas informações
+          </tc-title>
+
+          <tc-sub-title>
+            Precisamos identificar sua vaga
+          </tc-sub-title>
+
+        </div>
+        <div class="max-w-xl mx-auto mt-8 mb-0 space-y-4">
+          <div>
+            <tc-input [(fieldValue)]="job.requirements" title="Requisitos" fieldType="text"></tc-input>
+          </div>
+          <div>
+            <tc-input [(fieldValue)]="job.salary" title="Salário (R$)" fieldType="number"></tc-input>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <tc-button buttonClass="text-gray-500" awPreviousStep>Voltar</tc-button>
+            <tc-button awNextStep>Próximo passo</tc-button>
+          </div>
+        </div>
+      </aw-wizard-step>
+      <aw-wizard-step stepTitle="últimos passos">
+        <div class="max-w-lg mx-auto text-center mt-4">
+          <tc-title>
+            Como sua vaga deve ser?
+          </tc-title>
+
+          <tc-sub-title>
+            Selecione as opções que melhor descrevam sua vaga!
+          </tc-sub-title>
+
+        </div>
+        <div class="max-w-xl mx-auto mt-8 mb-0 space-y-4">
+          <div>
+            <p class="mb-4 text-center">Nível de experiência</p>
+            <fieldset class="grid grid-cols-2 gap-4 sm:grid-cols-5">
+              <div>
+                <input [(ngModel)]="job.level" type="radio" id="assistant" name="level" value="assistant" class="sr-only peer" checked />
+
+                <label for="assistant"
+                  class="block px-4 py-2 text-xs font-medium text-center border border-gray-200 rounded-full cursor-pointer peer-checked:bg-blue-500 peer-checked:text-white peer-checked:border-blue-500">
+                  Assistente
+                </label>
+              </div>
+
+              <div>
+                <input [(ngModel)]="job.level" type="radio" id="internship" name="level" value="internship" class="sr-only peer" />
+                <label for="internship"
+                  class="block px-4 py-2 text-xs font-medium text-center border border-gray-200 rounded-full cursor-pointer peer-checked:bg-blue-500 peer-checked:text-white peer-checked:border-blue-500">
+                  Estágiario
+                </label>
+              </div>
+
+              <div>
+                <input [(ngModel)]="job.level" type="radio" id="junior" name="level" value="junior" class="sr-only peer" />
+                <label for="junior"
+                  class="block px-4 py-2 text-xs font-medium text-center border border-gray-200 rounded-full cursor-pointer peer-checked:bg-blue-500 peer-checked:text-white peer-checked:border-blue-500">
+                  Junior
+                </label>
+              </div>
+
+              <div>
+                <input [(ngModel)]="job.level" type="radio" id="mid" name="level" value="mid" class="sr-only peer" />
+                <label for="mid"
+                  class="block px-4 py-2 text-xs font-medium text-center border border-gray-200 rounded-full cursor-pointer peer-checked:bg-blue-500 peer-checked:text-white peer-checked:border-blue-500">
+                  Pleno
+                </label>
+              </div>
+
+              <div>
+                <input [(ngModel)]="job.level" type="radio" id="senior" name="level" value="senior" class="sr-only peer" />
+                <label for="senior"
+                  class="block px-4 py-2 text-xs font-medium text-center border border-gray-200 rounded-full cursor-pointer peer-checked:bg-blue-500 peer-checked:text-white peer-checked:border-blue-500">
+                  Sênior
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div>
+            <p class="mb-4 text-center">Jornada de Trabalho</p>
+            <fieldset class="grid grid-cols-2 gap-4 sm:grid-cols-3">
+              <div>
+                <input [(ngModel)]="job.workingTime" type="radio" id="part" name="working-time" value="part" class="sr-only peer" checked />
+
+                <label for="part"
+                  class="block px-4 py-2 text-xs font-medium text-center border border-gray-200 rounded-full cursor-pointer peer-checked:bg-blue-500 peer-checked:text-white peer-checked:border-blue-500">
+                  Meio período
+                </label>
+              </div>
+
+              <div>
+                <input [(ngModel)]="job.workingTime" type="radio" id="full" name="working-time" value="full" class="sr-only peer" />
+                <label for="full"
+                  class="block px-4 py-2 text-xs font-medium text-center border border-gray-200 rounded-full cursor-pointer peer-checked:bg-blue-500 peer-checked:text-white peer-checked:border-blue-500">
+                  Integral
+                </label>
+              </div>
+
+              <div>
+                <input [(ngModel)]="job.workingTime" type="radio" id="flexible" name="working-time" value="flexible" class="sr-only peer" />
+                <label for="flexible"
+                  class="block px-4 py-2 text-xs font-medium text-center border border-gray-200 rounded-full cursor-pointer peer-checked:bg-blue-500 peer-checked:text-white peer-checked:border-blue-500">
+                  Flexível/Contrato
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div>
+            <p class="mb-4 text-center">Localização</p>
+            <fieldset class="grid grid-cols-2 gap-4 sm:grid-cols-3">
+              <div>
+                <input [(ngModel)]="job.location" type="radio" id="office" name="location" value="office" class="sr-only peer" checked />
+
+                <label for="office"
+                  class="block px-4 py-2 text-xs font-medium text-center border border-gray-200 rounded-full cursor-pointer peer-checked:bg-blue-500 peer-checked:text-white peer-checked:border-blue-500">
+                  Presencial
+                </label>
+              </div>
+
+              <div>
+                <input [(ngModel)]="job.location" type="radio" id="remote" name="location" value="remote" class="sr-only peer" />
+                <label for="remote"
+                  class="block px-4 py-2 text-xs font-medium text-center border border-gray-200 rounded-full cursor-pointer peer-checked:bg-blue-500 peer-checked:text-white peer-checked:border-blue-500">
+                  Remoto
+                </label>
+              </div>
+
+              <div>
+                <input [(ngModel)]="job.location" type="radio" id="hybrid" name="location" value="hybrid" class="sr-only peer" />
+                <label for="hybrid"
+                  class="block px-4 py-2 text-xs font-medium text-center border border-gray-200 rounded-full cursor-pointer peer-checked:bg-blue-500 peer-checked:text-white peer-checked:border-blue-500">
+                  Hibrido
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <tc-button buttonClass="text-gray-500" awPreviousStep>Voltar</tc-button>
+            <tc-button (click)="saveJob()">Finalizar</tc-button>
+          </div>
+        </div>
+      </aw-wizard-step>
+    </aw-wizard>
+  </div>
+</main>

@@ -2,7 +2,7 @@ const JobLevelEnum = require("../enums/jobLevel.enum")
 const InvalidField = require("../Errors/invalidField.error")
 
 class Job {
-    constructor({ _id, name, description, requirements, salary, level, workingTime, quantitiesCandidates,companyId }) {
+    constructor({ _id, name, description, requirements, salary, level, workingTime, quantitiesCandidates, companyId, status, location }) {
         this._id = _id
         this.name = name
         this.description = description
@@ -10,8 +10,10 @@ class Job {
         this.salary = salary ? Number(salary) : null //TODO - Validate headquarter
         this.level = level
         this.workingTime = workingTime
+        this.status = status
         this.quantitiesCandidates = quantitiesCandidates ? Number(quantitiesCandidates) : 0
         this.companyId = companyId
+        this.location = location
     }
 
     validateName() {
