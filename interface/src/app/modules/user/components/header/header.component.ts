@@ -1,8 +1,8 @@
-import { Router } from '@angular/router';
-import { CompanyLogout } from './../../store/actions/company.actions';
-import { Store } from '@ngxs/store';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Store } from '@ngxs/store';
 import { NotificationsService } from 'angular2-notifications';
+import { UserLogout } from '../../store/actions/user.actions';
 
 @Component({
   selector: 'tc-header',
@@ -17,8 +17,8 @@ export class HeaderComponent implements OnInit {
   }
 
   async logout() {
-    await this.store.dispatch(new CompanyLogout()).toPromise()
-    this.router.navigate(['company', 'signin'])
+    await this.store.dispatch(new UserLogout()).toPromise()
+    this.router.navigate(['user', 'signin'])
   }
 
 }
