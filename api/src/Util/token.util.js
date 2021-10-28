@@ -17,8 +17,8 @@ function generateCompanyJWT(company, string) {
 }
 
 function generateUserJWT(user, string) {
-    return jwt.sign({token: string, _id: user._id}, config.COMPANY_TOKEN_SECRET, {
-        expiresIn: config.COMPANY_TOKEN_EXPIRESIN
+    return jwt.sign({token: string, _id: user._id}, config.USER_TOKEN_SECRET, {
+        expiresIn: config.USER_TOKEN_EXPIRESIN
     })
 }
 

@@ -11,6 +11,7 @@ mongoose.connect(config.MONGODB_CONNECTION_URL, {
 
 module.exports = {
     company: require('./models/company.model'),
-    job: require('./models/job.model')
+    job: require('./models/job.model'),
+    user: require('./models/user.model')
 }
 

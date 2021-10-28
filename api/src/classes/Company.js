@@ -1,7 +1,6 @@
 const InvalidField = require("../Errors/invalidField.error")
 const passwordUtil = require("../Util/password.util")
 const emailUtil = require("../Util/email.util")
-const tokenUtil = require("../Util/token.util")
 
 class Company {
     constructor({ _id, name, description, companyRegister, headquarter, businessField, logo, email, password, token, passwordHash }) {

@@ -1,5 +1,6 @@
 const { Request, Response } = require('express')
 const Auth = require('../classes/Auth')
+const User = require('../classes/User')
 const authService = require('../service/authenticate.service')
 
 class AuthenticateController {
@@ -22,16 +23,16 @@ class AuthenticateController {
      * @param {Request} req Express Request
      * @param {Response} res Express Response
      */
-    //  async authCompany(req, res, next) {
-    //     try {
-    //         const company = new Company(req.body)
-    //         const companyResp = await companyService.createCompany(company)
+     async authUser(req, res, next) {
+        try {
+            const user = new User(req.body)
+            const userResp = await authService.authUser(user)
     
-    //         return res.json(companyResp)
-    //     } catch(e) {
-    //         return next(e)
-    //     }
-    // }
+            return res.set({'token': userResp.jwt}).json(userResp.user)
+        } catch(e) {
+            return next(e)
+        }
+    }
 
 
 }
