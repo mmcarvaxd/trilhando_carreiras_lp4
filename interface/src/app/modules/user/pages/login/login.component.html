@@ -1,0 +1,38 @@
+<section class="relative flex flex-wrap lg:h-screen lg:items-center">
+    <div class="w-full px-4 py-12 lg:w-1/2 sm:px-6 lg:px-8 sm:py-16 lg:py-24">
+      <div class="max-w-lg mx-auto text-center">
+        <h1 class="text-2xl font-bold sm:text-3xl">💼 Trilhando Carreiras</h1>
+      </div>
+  
+      <form class="max-w-xl mx-auto mt-8 mb-0 space-y-4">
+        <div>
+          <tc-input fieldType="text" title="E-mail" [(fieldValue)]="auth.email"></tc-input>
+        </div>
+        <div>
+          <tc-input fieldType="password"  title="Senha" [(fieldValue)]="auth.password"></tc-input>
+        </div>
+  
+        <div class="flex items-center justify-between">
+          <p class="text-sm text-gray-500">
+            Gostaria de criar um acesso para se cadidatar?
+            <a class="underline" routerLink="/user/signup">Cadastre-se</a>.
+          </p>
+          <tc-button (buttonClick)="doLogin()">Entrar</tc-button>
+        </div>
+        <div class="flex items-center justify-between">
+          <p class="text-sm text-gray-500">
+            Alterar para o acesso de 
+            <a class="underline" routerLink="/company/signin">Recrutador</a>.
+          </p>
+  
+        </div>
+        
+      </form>
+    </div>
+  
+    <div class="relative w-full h-64 sm:h-96 lg:w-1/2 lg:h-full">
+      <img class="absolute inset-0 object-cover w-full h-full" src="https://www.hyperui.dev/code/photos/team-1.jpeg"
+        alt="Trilhando Carreiras" />
+    </div>
+  </section>
+  
