@@ -1,0 +1,81 @@
+<main>
+    <div class="px-4 py-16 mx-auto max-w-screen-xl sm:px-6 lg:px-8">
+      <aw-wizard [navBarLayout]="'small'">
+        <aw-wizard-step stepTitle="candidato">
+          <div class="max-w-lg mx-auto text-center mt-4">
+            <tc-title>
+              Encontre o caminho para a empresa que almeja 🚀
+            </tc-title>
+  
+            <tc-sub-title>
+              Para começar digite algumas informações do seu perfil 😉
+            </tc-sub-title>
+          </div>
+          <div class="max-w-xl mx-auto mt-8 mb-0 space-y-4">
+            <div>
+              <tc-input [(fieldValue)]="user.name" title="Nome" fieldType="text"></tc-input>
+            </div>
+ 
+            <div class="flex items-center justify-between">
+              <p class="text-sm text-gray-500">
+                Já Cadastrado?
+                <a class="underline" [routerLink]="['/user/signin']">Faça login</a>
+              </p>
+  
+              <tc-button awNextStep>
+                Próximo passo
+              </tc-button>
+            </div>
+          </div>
+        </aw-wizard-step>
+        <aw-wizard-step stepTitle="Dados">
+          <div class="max-w-lg mx-auto text-center mt-4">
+            <tc-title>
+              Mais algumas informações
+            </tc-title>
+  
+            <tc-sub-title>
+              Precisamos identificar sua localização 🗺️
+            </tc-sub-title>
+  
+          </div>
+          <div class="max-w-xl mx-auto mt-8 mb-0 space-y-4">
+            <div>
+              <tc-input [(fieldValue)]="user.address" title="Endereço" fieldType="text"></tc-input>
+            </div>
+  
+            <div class="flex items-center justify-between">
+              <tc-button buttonClass="text-gray-500" awPreviousStep>Voltar</tc-button>
+              <tc-button awNextStep>Próximo passo</tc-button>
+            </div>
+          </div>
+        </aw-wizard-step>
+        <aw-wizard-step stepTitle="Credenciais">
+          <div class="max-w-lg mx-auto text-center mt-4">
+            <tc-title>
+              Cadastre as suas credenciais
+            </tc-title>
+  
+            <tc-sub-title>
+              Anote essas informações com carinho 🔑
+            </tc-sub-title>
+  
+          </div>
+          <div class="max-w-xl mx-auto mt-8 mb-0 space-y-4">
+            <div>
+              <tc-input [(fieldValue)]="user.email" title="E-mail" fieldType="email"></tc-input>
+            </div>
+            <div>
+              <tc-input [(fieldValue)]="user.password" title="Senha" fieldType="password"></tc-input>
+            </div>
+  
+            <div class="flex items-center justify-between">
+              <tc-button buttonClass="text-gray-500" awPreviousStep>Voltar</tc-button>
+              <tc-button (click)="saveUser()">Finalizar</tc-button>
+            </div>
+          </div>
+        </aw-wizard-step>
+      </aw-wizard>
+    </div>
+  </main>
+  
