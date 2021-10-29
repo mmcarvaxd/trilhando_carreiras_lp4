@@ -17,7 +17,8 @@ Em desenvolvimento.
 - [x] Página de home de Recrutadores e Candidatos
 - [x] Cadastro de Vagas (Recrutadores)
 - [x] Listagem de Vagas (Recrutadores)
-- [x] CI/CD
+- [ ] CI/CD
+- [ ] Notificações
 - [ ] Editar perfil
 - [ ] Candidatar-se às vagas
 - [ ] Gráficos e dados estatísticos
