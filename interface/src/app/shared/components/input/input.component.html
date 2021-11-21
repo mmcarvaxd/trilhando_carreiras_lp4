@@ -3,7 +3,7 @@
 
     <div class="relative">
         <input type="text" [name]="title" [id]="title" [type]="fieldType" class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm" ngClass="{'border-red-600': !isValid}"
-            [(ngModel)]="fieldValue" (ngModelChange)="valueChanged()" [placeholder]="title" />
+            [(ngModel)]="fieldValue" (ngModelChange)="valueChanged()" [placeholder]="title" [disabled]="isDisabled" />
     </div>
 
     <p class="ml-2 text-sm" *ngIf="!isValid">
