@@ -4,6 +4,7 @@ const companyRouter = require('./routes/company.router')
 const userRouter = require('./routes/user.router')
 const jobRouter = require('./routes/job.router')
 const authenticateRouter = require('./routes/authenticate.route')
+const subjectRouter = require('./routes/subject.router')
 const cors = require('cors')
 const morgan = require('morgan')
 
@@ -14,6 +15,7 @@ const CompanyRouter = companyRouter
 const UserRouter = userRouter
 const JobRouter = jobRouter
 const AuthenticateRouter = authenticateRouter
+const SubjectRouter = subjectRouter
 
 app.use(cors())
 app.use(morgan('tiny'))
@@ -24,6 +26,7 @@ app.use('/companies', CompanyRouter.getRoutes())
 app.use('/jobs', JobRouter.getRoutes())
 app.use('/authenticate', AuthenticateRouter.getRoutes())
 app.use('/users', UserRouter.getRoutes())
+app.use('/subjects', SubjectRouter.getRoutes())
 
 app.listen(port, () => {
     console.log(`Running on port ${port}`)
