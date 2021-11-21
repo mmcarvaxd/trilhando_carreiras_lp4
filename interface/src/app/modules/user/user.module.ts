@@ -10,6 +10,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ArchwizardModule } from 'angular-archwizard';
 import { FormsModule } from '@angular/forms';
 import { ActionCardComponent } from './pages/home/components/action-card/action-card.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ActionCardComponent } from './pages/home/components/action-card/action-
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    ActionCardComponent
+    ActionCardComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,

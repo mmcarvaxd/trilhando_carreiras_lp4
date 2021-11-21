@@ -25,6 +25,12 @@ const schema = new mongoose.Schema({
     passwordHash: {
         type: String,
         required: true
+    },
+    cv: {
+        type: Schema.Types.Buffer
+    },
+    interests: {
+        type: [Schema.Types.ObjectId]
     }
 })
 
