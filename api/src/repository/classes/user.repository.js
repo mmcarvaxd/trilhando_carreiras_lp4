@@ -52,6 +52,16 @@ class UserRepository {
 
         return user
     }
+
+    async addAppliedJob(user_id, job_id) {
+        const user = await userRepository.updateOne({_id: user_id}, {
+            $push: {
+                appliedJobs: job_id
+            }
+        })
+
+        return user
+    }
 }
 
 module.exports = new UserRepository()

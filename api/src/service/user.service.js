@@ -1,4 +1,5 @@
 const userRepository = require('../repository/classes/user.repository')
+const jobService = require('./job.service')
 const User = require('../classes/User')
 
 class UserService {
@@ -52,6 +53,16 @@ class UserService {
      */
     async deleteUser(id) {
         await userRepository.deleteUser(id)
+        return
+    }
+
+
+    async applyJob(user_id, job_id) {
+        try {
+            await jobService.addCandidate(user_id, job_id)
+            await userRepository.addAppliedJob(user_id, job_id)
+        } catch (error) { }
+
         return
     }
 }

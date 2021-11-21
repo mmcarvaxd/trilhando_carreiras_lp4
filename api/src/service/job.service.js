@@ -48,6 +48,11 @@ class JobService {
         await jobRepository.deleteJob(id)
         return
     }
+
+    async addCandidate(user_id, job_id) {
+        await jobRepository.addCandidate(user_id, job_id)
+        return
+    }
 }
 
 module.exports = new JobService()

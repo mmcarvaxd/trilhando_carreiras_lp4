@@ -38,6 +38,16 @@ class JobRepository {
 
         return job
     }
+
+    async addCandidate(user_id, job_id) {
+        const job = await jobRepository.updateOne({_id: job_id}, {
+            $push: {
+                candidatesId: user_id
+            }
+        })
+
+        return job
+    }
 }
 
 module.exports = new JobRepository()

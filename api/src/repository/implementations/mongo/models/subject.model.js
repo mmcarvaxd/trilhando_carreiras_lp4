@@ -10,6 +10,11 @@ const schema = new mongoose.Schema({
         type: String,
         required: true
     },
+    level: {
+        type: String,
+        enum: ['novice', 'intermediate', 'advanced'],
+        required: true
+    }
 })
 
 module.exports = mongoose.model('subject', schema, 'subject')

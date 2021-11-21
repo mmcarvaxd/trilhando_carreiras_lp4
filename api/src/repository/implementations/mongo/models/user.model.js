@@ -31,6 +31,9 @@ const schema = new mongoose.Schema({
     },
     interests: {
         type: [Schema.Types.ObjectId]
+    },
+    appliedJobs: {
+        type: [Schema.Types.ObjectId]
     }
 })
 

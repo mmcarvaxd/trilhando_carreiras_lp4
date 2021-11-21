@@ -3,7 +3,7 @@ const jobWorkingTimeEnum = require("../enums/jobWorkingTime.enum")
 const InvalidField = require("../Errors/invalidField.error")
 
 class Job {
-    constructor({ _id, name, description, requirements, salary, level, workingTime, quantitiesCandidates, companyId, status, location }) {
+    constructor({ _id, name, description, requirements, salary, level, workingTime, quantitiesCandidates, companyId, status, candidatesId, location }) {
         this._id = _id
         this.name = name
         this.description = description
@@ -14,6 +14,7 @@ class Job {
         this.status = status
         this.quantitiesCandidates = quantitiesCandidates ? Number(quantitiesCandidates) : 0
         this.companyId = companyId
+        this.candidatesId = candidatesId
         this.location = location
     }
 
