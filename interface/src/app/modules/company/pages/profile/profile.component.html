@@ -1,0 +1,40 @@
+<tc-header></tc-header>
+<main>
+  <div class="max-w-xl mx-auto mt-8 mb-0 space-y-4">
+    <div class="text-center">
+      <tc-title>Perfil</tc-title>
+    </div>
+    <div class="text-center">
+      <tc-sub-title>Edite suas informações!</tc-sub-title>
+    </div>
+    <div class="w-full">
+      <img src="https://www.nicepng.com/png/full/246-2467547_your-logo-here-your-logo-here-logo-png.png"
+      class="rounded-full w-52 h-52 m-auto">
+    </div>
+    <div>
+      <tc-input title="Nome da empresa" fieldType="text" [(fieldValue)]="company.name"> </tc-input>
+    </div>
+    <div>
+      <tc-input title="Descrição" fieldType="text" [(fieldValue)]="company.description"></tc-input>
+    </div>
+    <div>
+      <tc-input title="CNPJ" fieldType="text" [(fieldValue)]="company.companyRegister"></tc-input>
+    </div>
+    <div>
+      <tc-input title="Endereço" fieldType="text"  [(fieldValue)]="company.headquarter"></tc-input>
+    </div>
+    <div>
+      <tc-input title="E-mail" fieldType="email" [(fieldValue)]="company.email"></tc-input>
+    </div>
+    <div>
+      <tc-input title="Senha" fieldType="password" [(fieldValue)]="company.password"></tc-input>
+    </div>
+    <div>
+      <tc-input title="Área de atuação" fieldType="text" [(fieldValue)]="company.businessField"></tc-input>
+    </div>
+    <div class="flex items-center justify-between">
+      <tc-button routerLink="/company/home" buttonClass="text-gray-500">Descartar</tc-button>
+      <tc-button>Salvar</tc-button>
+    </div>
+  </div>
+</main>

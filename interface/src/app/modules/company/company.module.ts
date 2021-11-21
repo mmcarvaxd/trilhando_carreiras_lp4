@@ -19,6 +19,7 @@ import { ListJobComponent } from './pages/list-job/list-job.component';
 import { NgxsModule } from '@ngxs/store';
 import { CompanyState } from './store/states/company.state';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
     ActionCardComponent,
     LogoComponent,
     RegisterJobComponent,
-    ListJobComponent
+    ListJobComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,

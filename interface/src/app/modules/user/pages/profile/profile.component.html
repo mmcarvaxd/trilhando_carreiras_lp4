@@ -1,12 +1,16 @@
 <tc-header></tc-header>
 <main>
-  <div class="text-center">
-    <tc-title>Perfil</tc-title>
-  </div>
-  <div class="text-center">
-    <tc-sub-title>Edite suas informações!</tc-sub-title>
-  </div>
   <div class="max-w-xl mx-auto mt-8 mb-0 space-y-4">
+    <div class="text-center">
+      <tc-title>Perfil</tc-title>
+    </div>
+    <div class="text-center">
+      <tc-sub-title>Edite suas informações!</tc-sub-title>
+    </div>
+    <div class="w-full mt-10">
+      <img src="https://www.nicepng.com/png/full/246-2467547_your-logo-here-your-logo-here-logo-png.png"
+        class="rounded-full w-52 h-52 m-auto">
+    </div>
     <div>
       <tc-input title="Nome" fieldType="text"></tc-input>
     </div>
@@ -20,7 +24,7 @@
       <tc-input title="Senha" fieldType="password"></tc-input>
     </div>
     <div class="flex items-center justify-between">
-      <tc-button buttonClass="text-gray-500">Descartar</tc-button>
+      <tc-button routerLink="/user/home" buttonClass="text-gray-500">Descartar</tc-button>
       <tc-button>Salvar</tc-button>
     </div>
   </div>

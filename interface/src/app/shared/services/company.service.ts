@@ -17,4 +17,12 @@ export class CompanyService {
   getCompanies(): Promise<Company[]> {
     return this.http.get<Company[]>(this.url).toPromise()
   }
+
+  getCompany(_id:string): Promise<Company>{
+    return this.http.get<Company>(this.url+`/${_id}`).toPromise()
+  }
+  
+  updateCompany(company: Company): Promise<Company> {
+    return this.http.put<Company>(this.url, company).toPromise()
+  }
 }
