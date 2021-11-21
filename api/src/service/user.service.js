@@ -65,6 +65,17 @@ class UserService {
 
         return
     }
+
+    async revokeJob(user_id, job_id) {
+        try {
+            await jobService.removeCandidate(user_id, job_id)
+            await userRepository.removeAppliedJob(user_id, job_id)
+        } catch (error) {
+            console.log(error)
+         }
+
+        return
+    }
 }
 
 module.exports = new UserService()

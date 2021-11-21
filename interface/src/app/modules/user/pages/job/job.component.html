@@ -1,0 +1,36 @@
+<tc-header></tc-header>
+<div class="max-w-xl mx-auto mt-8 mb-0 space-y-4">
+  <div>
+    <tc-title class="text-center">{{job.name}}</tc-title>
+  </div>
+  <hr>
+  <h2 class="text-center font-bold text-2xl">Empresa</h2>
+  <div>
+    <tc-sub-title class="text-center">{{job.companyId.name}}</tc-sub-title>
+  </div>
+  <hr>
+  <h2 class="text-center font-bold text-2xl">Descrição da vaga</h2>
+  <div>
+    <tc-sub-title class="text-center">{{job.description}}</tc-sub-title>
+  </div>
+  <hr>
+  <h2 class="text-center font-bold text-2xl">Salário</h2>
+  <div>
+    <tc-sub-title class="text-center">{{job.salary | currency: 'BRL' }}</tc-sub-title>
+  </div>
+  <hr>
+  <h2 class="text-center font-bold text-2xl">Requisitos</h2>
+  <ul class="text-center">
+    <li *ngFor="let req of job.requirements">{{req}}</li>
+  </ul>
+  <hr>
+  <h2 class="text-center font-bold text-2xl" *ngIf="!isAlreadyApplied">Gostou da vaga?</h2>
+  <div class="text-center" *ngIf="!isAlreadyApplied">
+    <tc-button (buttonClick)="jobApply()">Aplicar para a vaga</tc-button>
+  </div>
+  <h2 class="text-center font-bold text-2xl" *ngIf="isAlreadyApplied">Acha que ainda não é o momento?</h2>
+  <div class="text-center" *ngIf="isAlreadyApplied">
+    <tc-button buttonClass="text-gray-100 bg-red-500" (buttonClick)="revokeApply()">Desistir da vaga</tc-button>
+  </div>
+  <div class="sm:hidden h-5"></div>
+</div>

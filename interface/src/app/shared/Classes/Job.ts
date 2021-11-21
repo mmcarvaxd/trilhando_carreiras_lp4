@@ -1,3 +1,4 @@
+import { User } from './User';
 import { Level } from '../../shared/enum/level.enum';
 import { WorkingTime } from '../../shared/enum/working-time.enum';
 import { Location } from '../../shared/enum/location.enum';
@@ -12,7 +13,8 @@ export class Job {
   workingTime: WorkingTime = WorkingTime.FULL
   status: string = "openned"
   quantitiesCandidates: number = 0
-  companyId: string = "6175cb7ecd370343c1b984f4"
+  companyId: any = ""
   company: any
   location: Location = Location.OFFICE
+  candidatesId: User[] = []
 }

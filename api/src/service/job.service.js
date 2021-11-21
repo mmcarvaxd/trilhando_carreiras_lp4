@@ -53,6 +53,11 @@ class JobService {
         await jobRepository.addCandidate(user_id, job_id)
         return
     }
+
+    async removeCandidate(user_id, job_id) {
+        await jobRepository.revokeCandidate(user_id, job_id)
+        return
+    }
 }
 
 module.exports = new JobService()

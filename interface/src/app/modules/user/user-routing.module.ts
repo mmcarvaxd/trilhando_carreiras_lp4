@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { NotAuthGuard } from './guards/notauth.guard';
 import { HomeComponent } from './pages/home/home.component';
+import { JobComponent } from './pages/job/job.component';
+import { ListJobComponent } from './pages/list-job/list-job.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -26,6 +28,14 @@ const routes: Routes = [
   },  {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [AuthGuard]
+  }, {
+    path: 'jobs/list',
+    component: ListJobComponent,
+    canActivate: [AuthGuard]
+  }, {
+    path: 'job/:id',
+    component: JobComponent,
     canActivate: [AuthGuard]
   }
 ];

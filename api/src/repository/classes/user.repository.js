@@ -62,6 +62,16 @@ class UserRepository {
 
         return user
     }
+
+    async removeAppliedJob(user_id, job_id) {
+        const user = await userRepository.updateOne({_id: user_id}, {
+            $pullAll: {
+                appliedJobs: [job_id]
+            }
+        })
+
+        return user
+    }
 }
 
 module.exports = new UserRepository()

@@ -11,6 +11,8 @@ import { ArchwizardModule } from 'angular-archwizard';
 import { FormsModule } from '@angular/forms';
 import { ActionCardComponent } from './pages/home/components/action-card/action-card.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { ListJobComponent } from './pages/list-job/list-job.component';
+import { JobComponent } from './pages/job/job.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
     HomeComponent,
     RegisterComponent,
     ActionCardComponent,
-    ProfileComponent
+    ProfileComponent,
+    ListJobComponent,
+    JobComponent
   ],
   imports: [
     CommonModule,

@@ -52,7 +52,8 @@ const schema = new mongoose.Schema({
         required: true
     },
     candidatesId: {
-        type: [Schema.Types.ObjectId]
+        type: [Schema.Types.ObjectId],
+        ref: 'users'
     }
 })
 
