@@ -30,7 +30,7 @@
       <h5 class="mt-4 font-bold">{{job.company.name}}</h5>
 
       <p class="mt-2 text-sm text-gray-500">
-        R$ {{job.salary}}
+        {{job.salary | currency: 'BRL'}}
       </p>
       <p class="mt-2 text-sm text-gray-500">
         {{job.location}} - {{job.workingTime}}
