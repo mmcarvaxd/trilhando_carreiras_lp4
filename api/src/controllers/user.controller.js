@@ -64,6 +64,30 @@ class UserController {
 
         res.status(StatusCodes.NO_CONTENT).send()
     }
+
+    /**
+     * @param {Request} req Express Request
+     * @param {Response} res Express Response
+     */
+    async applyJob(req, res) {
+        const job_id = req.params.id
+        const user_id = req.user._id
+
+        await userService.applyJob(user_id, job_id)
+        res.status(StatusCodes.NO_CONTENT).send()
+    }
+
+    /**
+     * @param {Request} req Express Request
+     * @param {Response} res Express Response
+     */
+    async revokeJob(req, res) {
+        const job_id = req.params.id
+        const user_id = req.user._id
+
+        await userService.revokeJob(user_id, job_id)
+        res.status(StatusCodes.NO_CONTENT).send()
+    }
 }
 
 module.exports = new UserController()

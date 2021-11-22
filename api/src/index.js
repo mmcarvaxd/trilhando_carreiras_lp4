@@ -5,6 +5,7 @@ const userRouter = require('./routes/user.router')
 const jobRouter = require('./routes/job.router')
 const authenticateRouter = require('./routes/authenticate.route')
 const subjectRouter = require('./routes/subject.router')
+const chatsRouter = require('./routes/chats.router')
 const cors = require('cors')
 const morgan = require('morgan')
 
@@ -27,6 +28,7 @@ app.use('/jobs', JobRouter.getRoutes())
 app.use('/authenticate', AuthenticateRouter.getRoutes())
 app.use('/users', UserRouter.getRoutes())
 app.use('/subjects', SubjectRouter.getRoutes())
+app.use('/charts', chatsRouter.getRoutes())
 
 app.listen(port, () => {
     console.log(`Running on port ${port}`)

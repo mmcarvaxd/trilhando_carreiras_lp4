@@ -3,7 +3,7 @@ const passwordUtil = require("../Util/password.util")
 const emailUtil = require("../Util/email.util")
 
 class User {
-    constructor({ _id, name, address, picture, email, password, token, passwordHash, interests, cv }) {
+    constructor({ _id, name, address, picture, email, password, token, passwordHash, interests, cv, appliedJobs }) {
         this._id = _id
         this.name = name
         this.address = address
@@ -13,6 +13,7 @@ class User {
         this.passwordHash = passwordHash
         this.picture = picture
         this.interests = interests
+        this.appliedJobs = appliedJobs
         this.cv = cv
     }
 

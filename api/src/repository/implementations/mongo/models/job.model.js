@@ -50,6 +50,10 @@ const schema = new mongoose.Schema({
         enum : ['office','remote', 'hybrid'],
         default: 'office',
         required: true
+    },
+    candidatesId: {
+        type: [Schema.Types.ObjectId],
+        ref: 'users'
     }
 })
 

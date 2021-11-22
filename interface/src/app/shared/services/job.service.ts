@@ -17,4 +17,8 @@ export class JobService {
   getJobs(): Promise<Job[]> {
     return this.http.get<Job[]>(this.url).toPromise()
   }
+
+  getJob(id: string): Promise<Job> {
+    return this.http.get<Job>(this.url + `/${id}`).toPromise()
+  }
 }

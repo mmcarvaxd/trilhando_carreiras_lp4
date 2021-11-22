@@ -2,13 +2,15 @@ const { job: jobRepository } = require('../implementations/mongo')
 
 class JobRepository {
     async getJobs(filter) {
-        if(!filter) {
+        if (!filter) {
             filter = {}
         }
 
         const jobs = await jobRepository.find(filter).populate({
             path: 'companyId'
-          })
+        }).populate({
+            path: 'candidatesId'
+        })
 
         return jobs
     }
@@ -16,6 +18,10 @@ class JobRepository {
     async getJob(id) {
         const job = await jobRepository.findOne({
             _id: id
+        }).populate({
+            path: 'companyId'
+        }).populate({
+            path: 'candidatesId'
         })
 
         return job
@@ -28,13 +34,33 @@ class JobRepository {
     }
 
     async updateJob(job) {
-        const jobResp = await jobRepository.updateOne({_id: job._id}, job)
+        const jobResp = await jobRepository.updateOne({ _id: job._id }, job)
 
         return jobResp
     }
 
     async deleteJob(id) {
-        const job = await jobRepository.deleteOne({_id: id})
+        const job = await jobRepository.deleteOne({ _id: id })
+
+        return job
+    }
+
+    async addCandidate(user_id, job_id) {
+        const job = await jobRepository.updateOne({ _id: job_id }, {
+            $push: {
+                candidatesId: user_id
+            }
+        })
+
+        return job
+    }
+
+    async revokeCandidate(user_id, job_id) {
+        const job = await jobRepository.updateOne({ _id: job_id }, {
+            $pullAll: {
+                candidatesId: [user_id]
+            }
+        })
 
         return job
     }

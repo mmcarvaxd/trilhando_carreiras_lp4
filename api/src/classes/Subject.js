@@ -1,7 +1,8 @@
 class Subject {
-    constructor({ _id, name }) {
+    constructor({ _id, name, level }) {
         this._id = _id
         this.name = name
+        this.level = level
     }
 }
 

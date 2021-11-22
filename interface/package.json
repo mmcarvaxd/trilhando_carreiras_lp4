@@ -23,6 +23,8 @@
     "@ngxs/store": "^3.7.2",
     "angular-archwizard": "^7.0.0",
     "angular2-notifications": "^9.0.0",
+    "ng2-google-charts": "^6.1.0",
+    "randomcolor": "^0.6.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -37,6 +39,7 @@
     "@tailwindcss/typography": "latest",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
+    "@types/randomcolor": "^0.5.6",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
