@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const config = require('../../../config/environment.config')
 
 mongoose.connection.setMaxListeners(0)
-
+console.log(config.MONGODB_CONNECTION_URL)
 mongoose.connect(config.MONGODB_CONNECTION_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
