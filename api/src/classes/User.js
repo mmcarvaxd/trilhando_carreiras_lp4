@@ -1,4 +1,4 @@
-const InvalidField = require("../Errors/invalidField.error")
+const InvalidField = require("../errors/invalidField.error")
 const passwordUtil = require("../Util/password.util")
 const emailUtil = require("../Util/email.util")
 

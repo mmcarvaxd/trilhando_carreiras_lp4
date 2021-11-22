@@ -1,6 +1,6 @@
 const JobLevelEnum = require("../enums/jobLevel.enum")
 const jobWorkingTimeEnum = require("../enums/jobWorkingTime.enum")
-const InvalidField = require("../Errors/invalidField.error")
+const InvalidField = require("../errors/invalidField.error")
 
 class Job {
     constructor({ _id, name, description, requirements, salary, level, workingTime, quantitiesCandidates, companyId, status, candidatesId, location }) {
