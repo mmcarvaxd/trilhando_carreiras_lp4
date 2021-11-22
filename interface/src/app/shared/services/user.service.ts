@@ -17,4 +17,12 @@ export class UserService {
   getUsers(): Promise<User[]> {
     return this.http.get<User[]>(this.url).toPromise()
   }
+
+  getUser(_id:string): Promise<User>{
+    return this.http.get<User>(this.url+`/${_id}`).toPromise()
+  } 
+
+  updateUser(user: User): Promise<User> {
+    return this.http.put<User>(this.url, user).toPromise()
+  }
 }

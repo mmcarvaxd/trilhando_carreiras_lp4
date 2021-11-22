@@ -24,7 +24,7 @@
       <tc-input title="Endereço" fieldType="text"  [(fieldValue)]="company.headquarter"></tc-input>
     </div>
     <div>
-      <tc-input title="E-mail" fieldType="email" [(fieldValue)]="company.email"></tc-input>
+      <tc-input title="E-mail" fieldType="email" [(fieldValue)]="company.email" [isDisabled]="true"></tc-input>
     </div>
     <div>
       <tc-input title="Senha" fieldType="password" [(fieldValue)]="company.password"></tc-input>
@@ -34,7 +34,7 @@
     </div>
     <div class="flex items-center justify-between">
       <tc-button routerLink="/company/home" buttonClass="text-gray-500">Descartar</tc-button>
-      <tc-button>Salvar</tc-button>
+      <tc-button (buttonClick)="UpdateCompany()">Salvar</tc-button>
     </div>
   </div>
 </main>

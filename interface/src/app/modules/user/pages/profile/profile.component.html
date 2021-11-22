@@ -12,20 +12,20 @@
         class="rounded-full w-52 h-52 m-auto">
     </div>
     <div>
-      <tc-input title="Nome" fieldType="text"></tc-input>
+      <tc-input title="Nome" fieldType="text" [(fieldValue)]="user.name"></tc-input>
     </div>
     <div>
-      <tc-input title="Endereço" fieldType="text"></tc-input>
+      <tc-input title="Endereço" fieldType="text" [(fieldValue)]="user.address"></tc-input>
     </div>
     <div>
-      <tc-input title="E-mail" fieldType="email"></tc-input>
+      <tc-input title="E-mail" fieldType="email" [(fieldValue)]="user.email" [isDisabled]="true"></tc-input>
     </div>
     <div>
       <tc-input title="Senha" fieldType="password"></tc-input>
     </div>
     <div class="flex items-center justify-between">
       <tc-button routerLink="/user/home" buttonClass="text-gray-500">Descartar</tc-button>
-      <tc-button>Salvar</tc-button>
+      <tc-button (buttonClick)="UpdateUser()">Salvar</tc-button>
     </div>
   </div>
 </main>

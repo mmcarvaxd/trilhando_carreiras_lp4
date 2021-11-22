@@ -8,7 +8,7 @@ import { CompanyState } from '../../store/states/company.state';
 
 @Component({
   selector: 'tc-profile',
-  templateUrl: './profile.component.html',
+  templateUrl: './profile.component.html', 
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
@@ -21,4 +21,23 @@ export class ProfileComponent implements OnInit {
     this.company = await this.companyService.getCompany(id)
   }
 
+  async UpdateCompany(){
+  try{
+    await this.companyService.updateCompany(this.company)
+    this.notificationsService.success('Boa!', 'As informações da sua empresa foram alteradas com sucesso!', {
+      timeOut: 3000,
+      showProgressBar: false,
+      pauseOnHover: true,
+      clickToClose: true
+    })
+    this.router.navigate(['company', 'home'])
+  } catch (error) {
+    this.notificationsService.error('Ocorreu um erro...', 'Não fNão foi possível alterar as informações da sua empresa!', {
+      timeOut: 3000,
+      showProgressBar: false,
+      pauseOnHover: true,
+      clickToClose: true
+    })
+  }
+}
 }

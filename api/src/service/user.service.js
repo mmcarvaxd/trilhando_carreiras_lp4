@@ -39,9 +39,6 @@ class UserService {
      async updateUser(user) {
         user.validateName()
         user.validateEmail()
-        user.validatePassword()
-        user.hashPassword()
-
         const userResponse = await userRepository.updateUser(user)
 
         return userResponse
