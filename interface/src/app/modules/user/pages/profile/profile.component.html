@@ -20,9 +20,6 @@
     <div>
       <tc-input title="E-mail" fieldType="email" [(fieldValue)]="user.email" [isDisabled]="true"></tc-input>
     </div>
-    <div>
-      <tc-input title="Senha" fieldType="password"></tc-input>
-    </div>
     <div class="flex items-center justify-between">
       <tc-button routerLink="/user/home" buttonClass="text-gray-500">Descartar</tc-button>
       <tc-button (buttonClick)="UpdateUser()">Salvar</tc-button>
