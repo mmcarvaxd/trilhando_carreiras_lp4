@@ -1,10 +1,11 @@
 import { UserService } from 'src/app/shared/services/user.service';
 import { UserState } from './../../store/states/user.state';
 import { Store } from '@ngxs/store';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Job } from './../../../../shared/Classes/Job';
 import { Component, OnInit } from '@angular/core';
 import { JobService } from 'src/app/shared/services/job.service';
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'tc-job',
@@ -16,20 +17,53 @@ export class JobComponent implements OnInit {
   isAlreadyApplied: boolean = false
   id = "empty"
 
-  constructor(private jobService: JobService, private aRouter: ActivatedRoute, private store: Store, private userService: UserService) { }
+  constructor(private jobService: JobService, private aRouter: ActivatedRoute, private store: Store, private userService: UserService, private notificationsService: NotificationsService, private router: Router) { }
 
   async ngOnInit(): Promise<void> {
     await this.getJob()
   }
 
   async jobApply() {
+  try{
     await this.userService.jobApply(this.job._id || "")
     await this.getJob()
+    this.notificationsService.success('Boa!', 'Candidatado à vaga com sucesso!', {
+      timeOut: 3000,
+      showProgressBar: false,
+      pauseOnHover: true,
+      clickToClose: true
+    })
+    this.router.navigate(['user', 'home'])
+  } catch (error) {
+    this.notificationsService.error('Ocorreu um erro...', 'Não foi possível candidatar-se à vaga!', {
+      timeOut: 3000,
+      showProgressBar: false,
+      pauseOnHover: true,
+      clickToClose: true
+    })
   }
+}
+  
 
   async revokeApply() {
+  try{
     await this.userService.revokeJob(this.job._id || "")
     await this.getJob()
+    this.notificationsService.success('Aviso:', 'Descadastrado da vaga com sucesso!', {
+      timeOut: 3000,
+      showProgressBar: false,
+      pauseOnHover: true,
+      clickToClose: true
+    })
+    this.router.navigate(['user', 'home'])
+  } catch (error) {
+    this.notificationsService.error('Ocorreu um erro...', 'Não foi possível descadastrar-se da vaga!', {
+      timeOut: 3000,
+      showProgressBar: false,
+      pauseOnHover: true,
+      clickToClose: true
+    })
+  }
   }
 
   async getJob() {
