@@ -13,7 +13,8 @@ import { ActionCardComponent } from './pages/home/components/action-card/action-
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ListJobComponent } from './pages/list-job/list-job.component';
 import { JobComponent } from './pages/job/job.component';
-
+import { ChartsComponent } from './pages/charts/charts.component';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { JobComponent } from './pages/job/job.component';
     ActionCardComponent,
     ProfileComponent,
     ListJobComponent,
-    JobComponent
+    JobComponent,
+    ChartsComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,7 @@ import { JobComponent } from './pages/job/job.component';
     SharedModule,
     ArchwizardModule,
     FormsModule,
+    Ng2GoogleChartsModule
   ]
 })
 export class UserModule { }

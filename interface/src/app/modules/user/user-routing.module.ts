@@ -1,3 +1,4 @@
+import { ChartsComponent } from './pages/charts/charts.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
@@ -36,6 +37,10 @@ const routes: Routes = [
   }, {
     path: 'job/:id',
     component: JobComponent,
+    canActivate: [AuthGuard]
+  }, {
+    path: 'charts',
+    component: ChartsComponent,
     canActivate: [AuthGuard]
   }
 ];
